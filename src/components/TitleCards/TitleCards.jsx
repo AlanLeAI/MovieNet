@@ -37,7 +37,7 @@ function TitleCards(props){
       <div className='card-list'>
         {apiData.map((card, index)=>{
           return(
-            <Link to={`/player/${card.id}`} className='card' key={index}>
+            <Link to={`/moviedetail/${card.id}`} className='card' key={index}>
               <img src={'https://image.tmdb.org/t/p/w500'+card.backdrop_path} alt={card.name} />
               <p>{card.original_title}</p>
             </Link>
@@ -49,3 +49,4 @@ function TitleCards(props){
 }
 
 export default TitleCards
+

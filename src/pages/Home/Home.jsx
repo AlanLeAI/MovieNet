@@ -26,7 +26,7 @@ function Home(){
                 <button className='btn dark-btn'> <img src={info_icon} alt="" />More Info</button>
             </div>
 
-            <TitleCards/>
+            <TitleCards />
           </div>
         </div>
 

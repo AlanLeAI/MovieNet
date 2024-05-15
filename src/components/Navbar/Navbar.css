@@ -80,3 +80,28 @@
 .nav-dark{
     background-color: #141414;
 }
+
+@media (max-width: 800px){
+    .navbar{
+        padding: 20px 4%;
+
+    }
+    .navbar-left ul{
+        display: none;
+    }
+
+    .navba img{
+        height: 25px;
+    }
+}
+
+
+@media (max-width: 500px){
+    .navba img{
+        height: 20px;
+    }
+
+    .navbar-right{
+        gap: 10px;
+    }
+}

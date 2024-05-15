@@ -1,0 +1,67 @@
+.moviedetail{
+    display: relative;
+}
+
+.moviedetail .back-buttons{
+    /* position: absolute; */
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.moviedetail h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.movieinfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.movieinfo-left{
+    flex: 1;
+    margin: 3%;
+    width: 100%;
+    height: 100%;
+}
+.movieinfo-left img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+
+.movieinfo-right{
+    flex: 2;
+    margin: 3%;
+}
+.movieinfo-right p{
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+.movieinfo-right button{
+    border: 0;
+    outline: 0;
+    margin-top: 3%;
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.movieinfo-right .btn:hover{
+    background: #ffffffbf;
+}
+
