@@ -1,14 +1,47 @@
 import React from 'react'
 import './Login.css'
 import logo from '../../assets/logo.png'
-import { login, signup } from '../../firebase'
+import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
+
 
 function Login(){
+
+  const navigate = useNavigate()
 
   const [signState, setSignState] = React.useState("Sign In")
   const [name, setName] = React.useState("")
   const [email, setEmail] = React.useState("")
   const [password, setPassword] = React.useState("")
+
+  async function signup(name, email,password){
+    try {
+      const response = await axios.post('http://localhost:3000/register', {name: name, email: email, password: password});
+      if (response.data.status === "authorized"){
+        navigate('/home')
+      }else{
+        toast(response.data.message)
+      }
+    } catch (error) {
+      console.error('Error registering user:', error);
+      toast(error.code)
+    }
+  }
+
+  async function login(email, password){
+    try{
+      const response = await axios.post('http://localhost:3000/login', {email: email, password: password});
+      
+      if (response.data.status === "authorized"){
+        navigate('/home')
+      }else{
+        toast(response.data.message)
+      }
+    }catch(error){
+      toast(error.code)
+    }
+  }
 
   async function user_auth(event){
     event.preventDefault()

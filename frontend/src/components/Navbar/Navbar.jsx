@@ -5,10 +5,15 @@ import search_icon from '../../assets/search_icon.svg'
 import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
-import { logout } from '../../firebase'
+import { useNavigate, useParams } from 'react-router-dom'
+
 
 function Navbar(){
   const navRef = React.useRef()
+  const navigate = useNavigate()
+  function logout(){
+    navigate('/')
+  }
 
   useEffect(()=>{
     window.addEventListener('scroll',()=>{
