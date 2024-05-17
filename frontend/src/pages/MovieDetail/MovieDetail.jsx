@@ -33,7 +33,7 @@ function MovieDetail(){
   return (
     <div className='moviedetail'>
         <img className='back-buttons' src={back_arrow_icon} alt="" onClick={()=>{
-            navigate('/')
+            navigate('/home')
         }}/>
         <h2>{apiData.title}</h2>
         <div className='movieinfo'>
