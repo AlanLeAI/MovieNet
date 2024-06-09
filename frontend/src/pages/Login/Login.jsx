@@ -4,6 +4,7 @@ import logo from '../../assets/logo.png'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { GoogleLogin } from '@react-oauth/google';
 
 
 function Login(){
@@ -52,6 +53,15 @@ function Login(){
     }
   }
 
+  const responseMessage = (response) => {
+    console.log(response);
+  };
+  const errorMessage = (error) => {
+      console.log(error);
+  };
+
+
+
   return (
     <div className='login'>
       <img src={logo} className='login-logo' alt="" />
@@ -75,6 +85,7 @@ function Login(){
             </div>
             <p>Need Help?</p>
           </div>
+          <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
         </form>
 
         <div className='form-switch'>

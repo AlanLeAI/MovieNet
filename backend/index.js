@@ -3,6 +3,11 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt"
 import cors from "cors";
+import fetch from "node-fetch";
+
+// import session from "express-session";
+// import passport from "passport";
+// import GoogleStrategy from "passport-google-oauth2"
 
 
 const app = express();
@@ -22,6 +27,9 @@ db.connect()
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+const TMDB_API_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlM2JjMGUxNDc0MmQxYjk1NTNkZWEzYzFlNzNiYjI1ZSIsInN1YiI6IjY2NDRhOThiZGNhMGZhNTQ2NTgyYTc0YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jrPb6GT0x5g4agi5DMwpSonnkesPpDrGn2PS016LknQ'; // Replace with your TMDB API key
+
 
 
 app.post("/register", async (req, res) => {
@@ -86,6 +94,28 @@ app.post("/login", async (req, res) => {
     }
   }catch(err){
     console.log(err)
+  }
+});
+
+app.get('/api/search', async (req, res) => {
+  const query = req.query.query;
+  const url = `https://api.themoviedb.org/3/search/collection?query=${query}&language=en-US&page=1`;
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: TMDB_API_KEY,
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+    console.log(data)
+    res.status(200).json(data);
+  } catch (error) {
+    console.error('Error fetching data from TMDB:', error);
+    res.status(500).send('Server error');
   }
 });
 

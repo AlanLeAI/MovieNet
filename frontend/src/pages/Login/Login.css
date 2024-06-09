@@ -100,3 +100,35 @@
         margin-top: 30px;
     }
 }
+
+.orbtn{
+    display: flex;
+    color: b3b3b3;
+}
+.thirdParty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .horizontal {
+    width: 100px;
+    height: 2px;
+    background-color: #b3b3b3;
+    margin: 10px
+  }
+  
+  .google-btn {
+    display: flex;
+    color: #b3b3b3;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer
+  }

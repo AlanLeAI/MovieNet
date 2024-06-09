@@ -5,12 +5,16 @@ import search_icon from '../../assets/search_icon.svg'
 import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 function Navbar(){
   const navRef = React.useRef()
   const navigate = useNavigate()
+
+  const [isNavbarVisible, setIsNavbarVisible] = React.useState(false);
+  const [query, setQuery] = React.useState("")
+
   function logout(){
     navigate('/')
   }
@@ -25,12 +29,33 @@ function Navbar(){
     })
   }, [])
 
+  useEffect(() => {
+    if (query) {
+      navigate(`/search?query=${encodeURIComponent(query)}`);
+    }
+  }, [query, navigate]);
+
+  function toggleNavbar(){
+    setIsNavbarVisible(!isNavbarVisible)
+  }
+
+
+
+  function queryMovie(event){
+    setQuery(event.target.value)
+  }
+
+
+  function homeClick(){
+    navigate('/home')
+  }
+
   return (
     <div ref={navRef} className='navbar'>
       <div className='navbar-left'>
         <img src={logo} alt="" />
         <ul>
-          <li>Home</li>
+          <li onClick={homeClick}>Home</li>
           <li>TV Shows</li>
           <li>Movies</li>
           <li>New & Popular</li>
@@ -39,7 +64,8 @@ function Navbar(){
         </ul>
       </div>
       <div className='navbar-right'>
-        <img src={search_icon} alt="" className='icons'/>
+        {isNavbarVisible && <input onChange={queryMovie} type="text" name="search" placeholder='Search' value={query}/>}
+        <img onClick={toggleNavbar} src={search_icon} alt="" className='icons'/>
         <p>Children</p>
         <img src={bell_icon} alt="" className='icons'/>
         <div className='navbar-profile'>
