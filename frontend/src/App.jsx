@@ -12,7 +12,6 @@ import { auth } from './firebase'
 
 function App(){
   const location = useLocation();
-
   const navigate = useNavigate()
 
   useEffect(()=>{

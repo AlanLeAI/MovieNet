@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-import bcrypt from "bcrypt"
 import cors from "cors";
 import fetch from "node-fetch";
+import env from "dotenv";
 
 // import session from "express-session";
 // import passport from "passport";
@@ -12,15 +12,15 @@ import fetch from "node-fetch";
 
 const app = express();
 const port = 3000;
-const saltRound = 10;
+env.config()
 
 
 const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "movienet",
-  password: "19072001",
-  port: 5432
+  user: process.env.DATABASE_USER,
+  host: process.env.DATABASE_HOST,
+  database: process.env.DATABASE_NAME,
+  password: process.env.DATABASE_PASSWORD,
+  port: process.env.DATABASE_PORT
 })
 db.connect()
 
@@ -28,7 +28,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const TMDB_API_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOGUwY2JiM2Y0ZDRhZTE5YWFmNGJiZjRiNWE5NjU1ZiIsInN1YiI6IjYzMDFlMDg0YzJmNDRiMDA3YTI5MzJhMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DcZfy-xDrNc97d1bzIDOtrbjhhdNx5HUoGOSM3XHk9I';
+const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 
 app.get('/search', async (req, res) => {

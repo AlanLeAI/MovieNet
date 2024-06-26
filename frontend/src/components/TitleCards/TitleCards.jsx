@@ -4,25 +4,13 @@ import cards_data from '../../assets/cards/Cards_data'
 import {Link} from 'react-router-dom'
 
 
-
 function TitleCards(props){
-  // const cardsRef = React.useRef()
-
-  // function handleWheel(event){
-  //   event.preventDefault()
-  //   cardsRef.current.scrollLeft += event.deltaY
-  // }
-
-  // useEffect(()=>{
-  //   cardsRef.current.addEventListener('wheel', handleWheel)
-  // }, [])
   const [apiData, setApiData] = React.useState([])
-
   const options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOGUwY2JiM2Y0ZDRhZTE5YWFmNGJiZjRiNWE5NjU1ZiIsInN1YiI6IjYzMDFlMDg0YzJmNDRiMDA3YTI5MzJhMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DcZfy-xDrNc97d1bzIDOtrbjhhdNx5HUoGOSM3XHk9I'
+      Authorization: import.meta.env.VITE_TMDB_API_KEY
     }
   };
   
