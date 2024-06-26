@@ -4,13 +4,28 @@ import {Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import Login from './pages/Login/Login'
 import SearchPage from './pages/SearchPage/SearchPage'
 import Navbar from './components/Navbar/Navbar'
-// import Player from './pages/Player/Player'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import MovieDetail from './pages/MovieDetail/MovieDetail'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from './firebase'
 
 function App(){
   const location = useLocation();
+
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    onAuthStateChanged(auth, async (user)=>{
+      if(user){
+        console.log("Logged In");
+        navigate("/home")
+      }else{
+        console.log("Logged Out");
+        navigate("/")
+      }
+    })
+  }, [])
 
   return (
     <div className="app-container">

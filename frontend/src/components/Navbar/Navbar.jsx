@@ -6,6 +6,7 @@ import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
 import { useNavigate } from 'react-router-dom'
+import { logout } from '../../firebase'
 
 
 function Navbar(){
@@ -15,9 +16,6 @@ function Navbar(){
   const [isNavbarVisible, setIsNavbarVisible] = React.useState(false);
   const [query, setQuery] = React.useState("")
 
-  function logout(){
-    navigate('/')
-  }
 
   useEffect(()=>{
     window.addEventListener('scroll',()=>{
@@ -29,11 +27,11 @@ function Navbar(){
     })
   }, [])
 
-  useEffect(() => {
-    if (query) {
-      navigate(`/search?query=${encodeURIComponent(query)}`);
-    }
-  }, [query, navigate]);
+  // useEffect(() => {
+  //   if (query) {
+  //     navigate(`/search?query=${encodeURIComponent(query)}`);
+  //   }
+  // }, [query, navigate]);
 
   function toggleNavbar(){
     setIsNavbarVisible(!isNavbarVisible)

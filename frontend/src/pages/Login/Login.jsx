@@ -1,11 +1,11 @@
 import React from 'react'
 import './Login.css'
 import logo from '../../assets/logo.png'
-import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { GoogleLogin } from '@react-oauth/google';
-
+import {login, signup} from '../../firebase'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { auth } from '../../firebase'
 
 function Login(){
 
@@ -16,34 +16,6 @@ function Login(){
   const [email, setEmail] = React.useState("")
   const [password, setPassword] = React.useState("")
 
-  async function signup(name, email,password){
-    try {
-      const response = await axios.post('http://localhost:3000/register', {name: name, email: email, password: password});
-      if (response.data.status === "authorized"){
-        navigate('/home')
-      }else{
-        toast(response.data.message)
-      }
-    } catch (error) {
-      console.error('Error registering user:', error);
-      toast(error.code)
-    }
-  }
-
-  async function login(email, password){
-    try{
-      const response = await axios.post('http://localhost:3000/login', {email: email, password: password});
-      
-      if (response.data.status === "authorized"){
-        navigate('/home')
-      }else{
-        toast(response.data.message)
-      }
-    }catch(error){
-      toast(error.code)
-    }
-  }
-
   async function user_auth(event){
     event.preventDefault()
     if(signState === "Sign In"){
@@ -53,13 +25,10 @@ function Login(){
     }
   }
 
-  const responseMessage = (response) => {
-    console.log(response);
-  };
-  const errorMessage = (error) => {
-      console.log(error);
-  };
-
+  async function handleGoogle(event){
+    const provider = await new GoogleAuthProvider();
+    return signInWithPopup(auth, provider)
+  }
 
 
   return (
@@ -69,15 +38,20 @@ function Login(){
         <h1>{signState}</h1>
         <form>
           {signState === "Sign Up"? 
-          <input value={name} onChange={(event)=>{setName(event.target.value)}} type="text" placeholder='Your name'/>: null}
+          <input value={name} 
+            onChange={(event)=>{setName(event.target.value)}} 
+            type="text" placeholder='Your name'/>: null}
           
           <input value={email} onChange={(event)=>{
             setEmail(event.target.value)
           }}  type="email" placeholder='Email'/>
+
           <input value={password} onChange={(event)=>{
             setPassword(event.target.value)
           }} type="password" placeholder='Password'/>
+
           <button onClick={user_auth} type='submit'>{signState}</button>
+
           <div className='form-help'>
             <div className='remember'>
                 <input type="checkbox" />
@@ -85,8 +59,11 @@ function Login(){
             </div>
             <p>Need Help?</p>
           </div>
-          <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+          
         </form>
+        <button onClick={handleGoogle} className="google-login-button">
+            Login with Google
+        </button>
 
         <div className='form-switch'>
           {signState === "Sign In"?<p>New To Netflix? <span onClick={()=>{

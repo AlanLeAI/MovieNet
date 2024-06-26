@@ -22,11 +22,11 @@ function TitleCards(props){
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlM2JjMGUxNDc0MmQxYjk1NTNkZWEzYzFlNzNiYjI1ZSIsInN1YiI6IjY2NDRhOThiZGNhMGZhNTQ2NTgyYTc0YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jrPb6GT0x5g4agi5DMwpSonnkesPpDrGn2PS016LknQ'
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOGUwY2JiM2Y0ZDRhZTE5YWFmNGJiZjRiNWE5NjU1ZiIsInN1YiI6IjYzMDFlMDg0YzJmNDRiMDA3YTI5MzJhMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DcZfy-xDrNc97d1bzIDOtrbjhhdNx5HUoGOSM3XHk9I'
     }
   };
   
-  fetch(`https://api.themoviedb.org/3/movie/${props.category?props.category:"now_playing"}?language=en-US&page=1`, options)
+  fetch(`https://api.themoviedb.org/3/movie/${props.category? props.category: "now_playing"}?language=en-US&page=1`, options)
     .then(response => response.json())
     .then(response => setApiData(response.results))
     .catch(err => console.error(err));
