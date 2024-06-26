@@ -17,15 +17,6 @@ function Navbar(){
   const [query, setQuery] = React.useState("")
 
 
-  useEffect(()=>{
-    window.addEventListener('scroll',()=>{
-      if(window.scrollY >= 80){
-        navRef.current.classList.add('nav-dark')
-      }else{
-        navRef.current.classList.remove('nav-dark')
-      }
-    })
-  }, [])
 
   // useEffect(() => {
   //   if (query) {
