@@ -18,22 +18,20 @@ function Navbar(){
 
 
 
-  // useEffect(() => {
-  //   if (query) {
-  //     navigate(`/search?query=${encodeURIComponent(query)}`);
-  //   }
-  // }, [query, navigate]);
+  useEffect(() => {
+    if (query) {
+      navigate(`/search?query=${query}`);
+    }
+  }, [query, navigate]);
 
   function toggleNavbar(){
     setIsNavbarVisible(!isNavbarVisible)
   }
 
-
-
   function queryMovie(event){
+    console.log(event.target.value)
     setQuery(event.target.value)
   }
-
 
   function homeClick(){
     navigate('/home')
@@ -60,11 +58,13 @@ function Navbar(){
         <div className='navbar-profile'>
           <img src={profile_img} alt="" className='profile'/>
           <img src={caret_icon} alt="" />
+
           <div className='dropdown'>
             <p onClick={()=>{
               logout()
             }}>Sign Out</p>
           </div>
+
         </div>
       </div>
     </div>

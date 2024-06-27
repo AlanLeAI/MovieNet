@@ -14,13 +14,13 @@ import { toast } from "react-toastify";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDNzz9UWPN45_DjhuAkNgpqbewEgENkN7I",
-  authDomain: "movienet-edfc2.firebaseapp.com",
-  projectId: "movienet-edfc2",
-  storageBucket: "movienet-edfc2.appspot.com",
-  messagingSenderId: "38106922083",
-  appId: "1:38106922083:web:5c53aa65910efdb0cc0c56",
-  measurementId: "G-JK6ETQVBD3"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -39,7 +39,8 @@ async function signup(name, email, password){
             uid: user.uid,
             name,
             authProvider: "local",
-            email
+            email,
+            avatar: '../public/imgs/avatar.png'
         })
     }
     catch (error) {

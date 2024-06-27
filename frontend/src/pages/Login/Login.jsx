@@ -5,7 +5,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import {login, signup} from '../../firebase'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import { auth } from '../../firebase'
+import { auth, db } from '../../firebase'
+import {addDoc, collection} from "firebase/firestore"
 
 function Login(){
 
@@ -27,7 +28,22 @@ function Login(){
 
   async function handleGoogle(event){
     const provider = await new GoogleAuthProvider();
-    return signInWithPopup(auth, provider)
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      await addDoc(collection(db, "user"), {
+        uid: user.uid,
+        authProvider: "google",
+        name: user.displayName,
+        email: user.email,
+        avatar: '../public/imgs/avatar.png'
+      })
+
+      console.log('User logged in and stored in Firestore:', user);
+    } catch (error) {
+      console.error('Error logging in with Google:', error);
+    }
   }
 
 

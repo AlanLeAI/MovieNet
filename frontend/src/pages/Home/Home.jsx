@@ -8,6 +8,7 @@ import TitleCards from '../../components/TitleCards/TitleCards'
 import Footer from '../../components/Footer/Footer'
 
 function Home(){
+  
   return (
     <div className='home'>
         <div className='hero'>
