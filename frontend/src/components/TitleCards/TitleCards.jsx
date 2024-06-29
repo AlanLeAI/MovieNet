@@ -13,11 +13,13 @@ function TitleCards(props){
       Authorization: import.meta.env.VITE_TMDB_API_KEY
     }
   };
+  useEffect(()=>{
+    fetch(`https://api.themoviedb.org/3/movie/${props.category? props.category: "now_playing"}?language=en-US&page=1`, options)
+      .then(response => response.json())
+      .then(response => setApiData(response.results))
+      .catch(err => console.error(err));
+  })
   
-  fetch(`https://api.themoviedb.org/3/movie/${props.category? props.category: "now_playing"}?language=en-US&page=1`, options)
-    .then(response => response.json())
-    .then(response => setApiData(response.results))
-    .catch(err => console.error(err));
 
   return (
     <div className='titlecards'>
