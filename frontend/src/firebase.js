@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword,
     getAuth, 
     signInWithEmailAndPassword, 
     signOut} from "firebase/auth"
-import {addDoc, collection, getFirestore} from "firebase/firestore"
+import {addDoc, collection, getFirestore, serverTimestamp} from "firebase/firestore"
 import { toast } from "react-toastify";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -40,7 +40,8 @@ async function signup(name, email, password){
             name,
             authProvider: "local",
             email,
-            avatar: '../public/imgs/avatar.png'
+            avatar: '../public/imgs/avatar.png',
+            createTime: serverTimestamp()
         })
     }
     catch (error) {

@@ -2,14 +2,6 @@
     display: block;
 }
 
-/* .moviedetail .back-buttons{
-    position: relative;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    cursor: pointer;
-} */
-
 .moviedetail h2{
     font-size: 36px;
     margin-bottom: 10px;

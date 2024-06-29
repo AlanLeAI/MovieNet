@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import {login, signup} from '../../firebase'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { auth, db } from '../../firebase'
-import {addDoc, collection} from "firebase/firestore"
+import {addDoc, collection, serverTimestamp} from "firebase/firestore"
 
 function Login(){
 
@@ -37,7 +37,8 @@ function Login(){
         authProvider: "google",
         name: user.displayName,
         email: user.email,
-        avatar: '../public/imgs/avatar.png'
+        avatar: '../public/imgs/avatar.png',
+        createTime: serverTimestamp()
       })
 
       console.log('User logged in and stored in Firestore:', user);
