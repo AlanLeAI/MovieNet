@@ -15,14 +15,19 @@ function Navbar(){
 
   const [isNavbarVisible, setIsNavbarVisible] = React.useState(false);
   const [query, setQuery] = React.useState("")
-
-
+  const queryRef = React.useRef(query)
 
   useEffect(() => {
-    if (query) {
-      navigate(`/search?query=${query}`);
+    queryRef.current = query;
+  }, [query]);
+
+  useEffect(() => {
+    if (queryRef.current) {
+      navigate(`/search?query=${queryRef.current}`);
+    }else {
+      navigate('/home');
     }
-  }, [query, navigate]);
+  }, [queryRef.current, navigate]);
 
   function toggleNavbar(){
     setIsNavbarVisible(!isNavbarVisible)
