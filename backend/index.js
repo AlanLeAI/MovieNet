@@ -5,10 +5,6 @@ import cors from "cors";
 import fetch from "node-fetch";
 import env from "dotenv";
 
-// import session from "express-session";
-// import passport from "passport";
-// import GoogleStrategy from "passport-google-oauth2"
-
 
 const app = express();
 const port = 3000;
