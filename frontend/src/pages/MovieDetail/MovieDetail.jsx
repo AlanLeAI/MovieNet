@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import './MovieDetail.css'
-import back_arrow_icon from '../../assets/back_arrow_icon.png'
 import { useNavigate, useParams } from 'react-router-dom'
 import Player from '../../components/Player/Player'
 
@@ -15,7 +14,7 @@ function MovieDetail(){
         method: 'GET',
         headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlM2JjMGUxNDc0MmQxYjk1NTNkZWEzYzFlNzNiYjI1ZSIsInN1YiI6IjY2NDRhOThiZGNhMGZhNTQ2NTgyYTc0YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jrPb6GT0x5g4agi5DMwpSonnkesPpDrGn2PS016LknQ'
+        Authorization: import.meta.env.VITE_TMDB_API_KEY
         }
     };
 
@@ -32,9 +31,7 @@ function MovieDetail(){
 
   return (
     <div className='moviedetail'>
-        <img className='back-buttons' src={back_arrow_icon} alt="" onClick={()=>{
-            navigate('/home')
-        }}/>
+
         <h2>{apiData.title}</h2>
         <div className='movieinfo'>
             <div className='movieinfo-left'>

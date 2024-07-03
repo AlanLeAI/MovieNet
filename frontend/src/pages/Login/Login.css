@@ -100,3 +100,57 @@
         margin-top: 30px;
     }
 }
+
+.orbtn{
+    display: flex;
+    color: b3b3b3;
+}
+.thirdParty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .horizontal {
+    width: 100px;
+    height: 2px;
+    background-color: #b3b3b3;
+    margin: 10px
+  }
+  
+  .google-btn {
+    display: flex;
+    color: #b3b3b3;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer
+  }
+
+  /* src/components/GoogleLoginButton.css */
+
+.google-login-button {
+    background-color: #4285F4;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .google-login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.5);
+  }
+  

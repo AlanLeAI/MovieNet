@@ -4,32 +4,22 @@ import cards_data from '../../assets/cards/Cards_data'
 import {Link} from 'react-router-dom'
 
 
-
 function TitleCards(props){
-  // const cardsRef = React.useRef()
-
-  // function handleWheel(event){
-  //   event.preventDefault()
-  //   cardsRef.current.scrollLeft += event.deltaY
-  // }
-
-  // useEffect(()=>{
-  //   cardsRef.current.addEventListener('wheel', handleWheel)
-  // }, [])
   const [apiData, setApiData] = React.useState([])
-
   const options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlM2JjMGUxNDc0MmQxYjk1NTNkZWEzYzFlNzNiYjI1ZSIsInN1YiI6IjY2NDRhOThiZGNhMGZhNTQ2NTgyYTc0YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jrPb6GT0x5g4agi5DMwpSonnkesPpDrGn2PS016LknQ'
+      Authorization: import.meta.env.VITE_TMDB_API_KEY
     }
   };
+  useEffect(()=>{
+    fetch(`https://api.themoviedb.org/3/movie/${props.category? props.category: "now_playing"}?language=en-US&page=1`, options)
+      .then(response => response.json())
+      .then(response => setApiData(response.results))
+      .catch(err => console.error(err));
+  }, [])
   
-  fetch(`https://api.themoviedb.org/3/movie/${props.category?props.category:"now_playing"}?language=en-US&page=1`, options)
-    .then(response => response.json())
-    .then(response => setApiData(response.results))
-    .catch(err => console.error(err));
 
   return (
     <div className='titlecards'>
