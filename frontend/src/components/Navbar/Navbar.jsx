@@ -13,28 +13,22 @@ function Navbar(){
   const navRef = React.useRef()
   const navigate = useNavigate()
 
-  const [isNavbarVisible, setIsNavbarVisible] = React.useState(false);
+  const [isSearchbarVisible, setIsSearchbarVisible] = React.useState(false);
   const [query, setQuery] = React.useState("")
-  const queryRef = React.useRef(query)
 
   useEffect(() => {
-    queryRef.current = query;
-  }, [query]);
-
-  useEffect(() => {
-    if (queryRef.current) {
-      navigate(`/search?query=${queryRef.current}`);
-    }else {
+    if (query) {
+      navigate(`/search?query=${query}`);
+    }else{
       navigate('/home');
     }
-  }, [queryRef.current, navigate]);
+  }, [query]);
 
   function toggleNavbar(){
-    setIsNavbarVisible(!isNavbarVisible)
+    setIsSearchbarVisible(!isSearchbarVisible)
   }
 
   function queryMovie(event){
-    console.log(event.target.value)
     setQuery(event.target.value)
   }
 
@@ -56,7 +50,7 @@ function Navbar(){
         </ul>
       </div>
       <div className='navbar-right'>
-        {isNavbarVisible && <input onChange={queryMovie} type="text" name="search" placeholder='Search' value={query}/>}
+        {isSearchbarVisible && <input onChange={queryMovie} type="text" name="search" placeholder='Search' value={query}/>}
         <img onClick={toggleNavbar} src={search_icon} alt="" className='icons'/>
         <p>Children</p>
         <img src={bell_icon} alt="" className='icons'/>

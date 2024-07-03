@@ -18,7 +18,7 @@ function TitleCards(props){
       .then(response => response.json())
       .then(response => setApiData(response.results))
       .catch(err => console.error(err));
-  })
+  }, [])
   
 
   return (
