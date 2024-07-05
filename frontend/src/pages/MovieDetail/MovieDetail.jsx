@@ -1,11 +1,10 @@
 import React, {useEffect} from 'react'
 import './MovieDetail.css'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Player from '../../components/Player/Player'
 
 function MovieDetail(){
     const {id} = useParams()
-    const navigate = useNavigate()
     const [onplay, setOnplay] = React.useState(false)
 
     const [apiData, setApiData] = React.useState({})
@@ -42,7 +41,7 @@ function MovieDetail(){
                 <p>Release Date: {apiData.release_date}</p>
                 <p>Genres: {apiData.genres?apiData.genres.map(genre => genre.name).join(', '):null}</p>
                 <p>Average Ratings: {apiData.vote_average}/10</p>
-                <button className='btn' onClick={handleOnPlay}>Watch</button>
+                <button className='custom-btn' onClick={handleOnPlay}>Watch</button>
             </div>
 
         </div>

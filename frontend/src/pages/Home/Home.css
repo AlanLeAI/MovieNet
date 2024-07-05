@@ -34,11 +34,11 @@
     margin-bottom: 50px;
 }
 
-.hero-btns .btn img{
+.hero-btns .custom-btn img{
     width: 25px;
 }
 
-.hero-btns .btn{
+.hero-btns .custom-btn{
     border: 0;
     outline: 0;
     padding: 8px 20px;
@@ -52,16 +52,16 @@
     cursor: pointer;
 }
 
-.hero-btns .btn.dark-btn{
+.hero-btns .custom-btn.dark-btn{
     color: #fff;
     background-color: #6d6d6eb3;
 }
 
-.hero-btns .btn:hover{
+.hero-btns .custom-btn:hover{
     background: #ffffffbf;
 }
 
-.hero-btns .btn.dark-btn:hover{
+.hero-btns .custom-btn.dark-btn:hover{
     background: #6d6d6e66;
 }
 
@@ -94,7 +94,7 @@
         font-size: 12px;
         margin-bottom: 10px;
     }
-    .btn img{
+    .custom-btn img{
         width: 20px;
     }
     .more-cards{

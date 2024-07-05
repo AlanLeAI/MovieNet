@@ -1,4 +1,4 @@
-.navbar{
+.custom-navbar{
     width: 100%;
     padding: 20px 6%;
     display: flex;
@@ -55,7 +55,7 @@
     position: relative;
 }
 
-.navbar .dropdown{
+.custom-navbar .custom-dropdown{
     position: absolute;
     top: 100%;
     right: 0;
@@ -68,12 +68,12 @@
     display: none;
 }
 
-.navbar .dropdown p{
+.navbar .custom-dropdown p{
     font-size: 13px;
     cursor: pointer;
 }
 
-.navbar-profile:hover .dropdown{
+.navbar-profile:hover .custom-dropdown{
     display: block;
 }
 
@@ -82,7 +82,7 @@
 }
 
 @media (max-width: 800px){
-    .navbar{
+    .custom-navbar{
         padding: 20px 4%;
 
     }
@@ -90,14 +90,14 @@
         display: none;
     }
 
-    .navba img{
+    .custom-navbar img{
         height: 25px;
     }
 }
 
 
 @media (max-width: 500px){
-    .navba img{
+    .custom-navbar img{
         height: 20px;
     }
 

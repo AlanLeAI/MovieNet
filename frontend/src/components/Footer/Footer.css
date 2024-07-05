@@ -1,4 +1,4 @@
-.footer{
+.custom-footer{
     padding: 30px 4%;
     max-width: 1000px;
     margin: 0 auto;
@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-.footer ul{
+.custom-footer ul{
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 15px;

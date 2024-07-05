@@ -1,16 +1,12 @@
 import React from 'react'
 import './Login.css'
 import logo from '../../assets/logo.png'
-import { useNavigate, useParams } from 'react-router-dom'
-import { toast } from 'react-toastify'
 import {login, signup} from '../../firebase'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { auth, db } from '../../firebase'
 import {addDoc, collection, serverTimestamp} from "firebase/firestore"
 
 function Login(){
-
-  const navigate = useNavigate()
 
   const [signState, setSignState] = React.useState("Sign In")
   const [name, setName] = React.useState("")

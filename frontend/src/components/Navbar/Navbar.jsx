@@ -37,7 +37,7 @@ function Navbar(){
   }
 
   return (
-    <div ref={navRef} className='navbar'>
+    <div ref={navRef} className='custom-navbar'>
       <div className='navbar-left'>
         <img src={logo} alt="" />
         <ul>
@@ -58,7 +58,7 @@ function Navbar(){
           <img src={profile_img} alt="" className='profile'/>
           <img src={caret_icon} alt="" />
 
-          <div className='dropdown'>
+          <div className='custom-dropdown'>
             <p onClick={()=>{
               logout()
             }}>Sign Out</p>
