@@ -1,0 +1,41 @@
+.titlecards{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+.titlecards h2{
+    margin-bottom: 8px;
+}
+
+.card-list-search{
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping of items */
+    gap: 10px;
+    overflow: auto;  /* Allow scrolling if the container's max height is reached */
+    max-height: 800px; 
+}
+
+.card-list-search::-webkit-scrollbar{
+    display: none;
+}
+
+.card-list-search img{
+    width: 240px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-list-search .card{
+    position: relative;
+}
+
+.card-list-search .card p{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+

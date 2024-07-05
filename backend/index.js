@@ -29,7 +29,7 @@ const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 app.get('/search', async (req, res) => {
   const query = req.query.query;
-  const url = `https://api.themoviedb.org/3/search/collection?query=${query}&language=en-US&page=1`;
+  let allMovies = [];
   const options = {
     method: 'GET',
     headers: {
@@ -39,10 +39,14 @@ app.get('/search', async (req, res) => {
   };
 
   try {
-    const response = await fetch(url, options);
-    const data = await response.json();
-    console.log(data)
-    res.status(200).json(data);
+    for (let page = 1; page <= 5; page++) {
+      const url = `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}`;
+      const response = await fetch(url, options);
+      const data = await response.json();
+      const filteredData = data.results.filter(movie => movie.backdrop_path !== null);
+      allMovies = allMovies.concat(filteredData); 
+    }
+    res.status(200).json(allMovies);
   } catch (error) {
     console.error('Error fetching data from TMDB:', error);
     res.status(500).send('Server error');
