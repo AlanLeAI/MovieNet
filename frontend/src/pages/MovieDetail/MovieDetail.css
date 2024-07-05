@@ -53,7 +53,7 @@
     cursor: pointer;
 }
 
-.movieinfo-right .btn:hover{
+.movieinfo-right .custom-btn:hover{
     background: #ffffffbf;
 }
 

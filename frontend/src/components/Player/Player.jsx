@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react'
 import './Player.css'
-import back_arrow_icon from '../../assets/back_arrow_icon.png'
-import { useNavigate, useParams } from 'react-router-dom'
 
 function Player(props){
-  const navigate = useNavigate()
 
   const [apiData, setApiData] = React.useState({
     name: "",

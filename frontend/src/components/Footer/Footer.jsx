@@ -7,7 +7,7 @@ import facebook_icon from "../../assets/facebook_icon.png"
 
 function Footer(){
   return (
-    <div className='footer'>
+    <div className='custom-footer'>
       <div className='footer-icons'>
         <img src={facebook_icon} alt="" />
         <img src={youtube_icon} alt="" />
