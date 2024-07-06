@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './Navbar.css'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/MovieNet_Text.png'
 import search_icon from '../../assets/search_icon.svg'
 import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
@@ -37,16 +37,16 @@ function Navbar(){
   }
 
   return (
-    <div ref={navRef} className='custom-navbar'>
+    <nav ref={navRef} className='custom-navbar'>
       <div className='navbar-left'>
-        <img src={logo} alt="" />
+        <img src={logo} alt="MovieNet Text Logo" style={{width: "125px"}} />
         <ul>
           <li onClick={homeClick}>Home</li>
-          <li>TV Shows</li>
-          <li>Movies</li>
-          <li>New & Popular</li>
-          <li>My List</li>
-          <li>Browse by Languages</li>
+          <li>Trending</li>
+          <li>Upcoming</li>
+          <li>Action</li>
+          <li>Romance</li>
+          <li>Mystery</li>
         </ul>
       </div>
       <div className='navbar-right'>
@@ -66,7 +66,7 @@ function Navbar(){
 
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

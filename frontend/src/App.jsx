@@ -3,7 +3,7 @@ import Home from './pages/Home/Home'
 import {Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import Login from './pages/Login/Login'
 import SearchPage from './pages/SearchPage/SearchPage'
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar2'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import MovieDetail from './pages/MovieDetail/MovieDetail'
@@ -28,7 +28,7 @@ function App(){
 
   return (
     <div className="app-container">
-      <ToastContainer theme='dark'/>
+      <ToastContainer theme='black'/>
       {location.pathname !== '/' && <Navbar />}
       <div className="content-container">
       <Routes>
