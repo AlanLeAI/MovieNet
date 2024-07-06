@@ -16,9 +16,3 @@ body{
   display: flex;
   flex-direction: column;
 }
-
-.custom-navbar {
-  position: fixed;
-  z-index: 1000; 
-}
-

@@ -1,7 +1,7 @@
 .custom-navbar {
     width: 100%;  
     font-size: 14px;
-    background-image: linear-gradient(180deg, rgba(53, 52, 52, 0.7) 10%, transparent);
+    background-image: linear-gradient(180deg, rgba(40, 34, 34, 0.7) 10%, transparent);
     z-index: 1;
 }
 
