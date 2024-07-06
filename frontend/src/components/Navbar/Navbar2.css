@@ -1,0 +1,85 @@
+.custom-navbar {
+    width: 100%;  
+    font-size: 14px;
+    background-image: linear-gradient(180deg, rgba(53, 52, 52, 0.7) 10%, transparent);
+    z-index: 1;
+}
+
+.nav-items {
+     text-decoration: none;
+     padding: 0.2rem 0.75rem;
+     font-size: 16px;
+     font-weight: 600;
+     color: #fefefe;
+     position: relative;
+     transition: color 0.25s;
+}
+
+.nav-items:hover {
+    background-color: #fefefe;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0.2rem 0.75rem;
+}
+
+.text-logo {
+    width: 125px;
+}
+
+.text-logo:hover {
+    cursor: pointer;
+}
+
+.navbar-right .icons{
+    width: 20px;
+    cursor: pointer;
+}
+
+.navbar-right .profile{
+    border-radius: 4px;
+    width: 35px;
+}
+
+.navbar-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.custom-navbar .custom-dropdown{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    background: #191919;
+    padding: 18px 22px;
+    border-radius: 2px;
+    text-decoration: underline;
+    z-index: 1;
+    display: none;
+}
+
+.navbar .custom-dropdown p{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.navbar-profile:hover .custom-dropdown{
+    display: block;
+}
+
+.nav-dark{
+    background-color: #141414;
+}
+
+@media (max-width: 800px){
+
+}
+
+
+@media (max-width: 500px){
+
+}

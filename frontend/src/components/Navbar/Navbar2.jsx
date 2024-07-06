@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Navbar.css";
+import "./Navbar2.css";
 import logo from "../../assets/MovieNet_Text.png";
 import search_icon from "../../assets/search_icon.svg";
 import bell_icon from "../../assets/bell_icon.svg";
