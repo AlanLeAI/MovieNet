@@ -5,4 +5,14 @@ CREATE TABLE users(
     password VARCHAR(100)
 )
 
+CREATE TABLE blogs(
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    authorID INTEGER NOT NULL,
+    timeCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    FOREIGN KEY (authorID) REFERENCES users(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
 
