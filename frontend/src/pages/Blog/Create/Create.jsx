@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Create.css";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../../firebase";
 const CreateBlog = () => {
   const [title, setTitle] = React.useState("");
   const [content, setContent] = React.useState("");
   const [user, setUser] = React.useState();
-  const publishBlog = async () => {
-    const url = `http://localhost:3000/blogs`;
+
+  useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         setUser(user);
@@ -15,6 +15,10 @@ const CreateBlog = () => {
         setUser(null);
       }
     });
+  }, []);
+
+  const publishBlog = async () => {
+    const url = `http://localhost:3000/blogs`;
 
     const req = { title: title, content: content, authorID: user.uid };
     const response = await fetch(url, {
@@ -33,42 +37,45 @@ const CreateBlog = () => {
       {/* Button */}
       <div className="d-flex flex-row-reverse mt-3 mb-3">
         <button
-          className="border me-5 p-1 bg-dark"
+          className="border me-5 p-1 text-white rounded bgTransparent"
           type="button"
           onClick={publishBlog}
         >
           Publish
         </button>
-        <div className="border me-2 p-1">Preview</div>
+
+        <button
+          className="border me-2 p-1 text-white rounded bgTransparent"
+          type="button"
+        >
+          Preview
+        </button>
       </div>
 
       {/*Input title  */}
-      <div className="ms-3">
-        <input
-          onChange={(event) => {
-            setTitle(event.target.value);
-            console.log(title);
-          }}
-          type="text"
-          placeholder="Input your title"
-          value={title}
-          className="h2 bg-dark border-0 p-2 "
-        ></input>
-      </div>
+
+      <input
+        onChange={(event) => {
+          setTitle(event.target.value);
+          console.log(title);
+        }}
+        type="text"
+        placeholder="title"
+        value={title}
+        className="h3 border  p-2 rounded ms-3 bgTransparent"
+      ></input>
 
       {/* Input Content */}
-      <div className="ms-3 mt-3">
-        <textarea
-          onChange={(event) => {
-            setContent(event.target.value);
-          }}
-          name="blogContent"
-          cols="75"
-          rows="10"
-          className="h2 bg-dark border-0 p-2 "
-          placeholder="Your content"
-        ></textarea>
-      </div>
+      <textarea
+        onChange={(event) => {
+          setContent(event.target.value);
+        }}
+        name="blogContent"
+        cols="85"
+        rows="10"
+        className="h3 border p-2 pt-3 rounded ms-3 mt-3 bgTransparent"
+        placeholder="What's on your mind?"
+      ></textarea>
     </div>
   );
 };
