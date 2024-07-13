@@ -1,46 +1,47 @@
-import React, { useEffect } from 'react'
-import Home from './pages/Home/Home'
-import {Routes, Route, useNavigate, useLocation } from 'react-router-dom'
-import Login from './pages/Login/Login'
-import SearchPage from './pages/SearchPage/SearchPage'
-import Navbar from './components/Navbar/Navbar'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import MovieDetail from './pages/MovieDetail/MovieDetail'
-import { onAuthStateChanged } from 'firebase/auth'
-import { auth } from './firebase'
+import React, { useEffect } from "react";
+import Home from "./pages/Home/Home";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import Login from "./pages/Login/Login";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import Navbar from "./components/Navbar/Navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import MovieDetail from "./pages/MovieDetail/MovieDetail";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+import CreateBlog from "./pages/Blog/Create/Create";
 
-function App(){
+function App() {
   const location = useLocation();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    onAuthStateChanged(auth, async (user)=>{
-      if(user){
+  useEffect(() => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
         console.log("Logged In");
-        navigate("/home")
-      }else{
+        navigate("/home");
+      } else {
         console.log("Logged Out");
-        navigate("/")
+        navigate("/");
       }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <div className="app-container">
-      <ToastContainer theme='dark'/>
-      {location.pathname !== '/' && <Navbar />}
+      <ToastContainer theme="dark" />
+      {location.pathname !== "/" && <Navbar />}
       <div className="content-container">
-      <Routes>
-          <Route path="/" element={<Login/>}/>
-          <Route path='/home' element={<Home/>}/>
-          <Route path='/moviedetail/:id' element={<MovieDetail/>}/>
-          <Route path='/search' element={<SearchPage/>}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/moviedetail/:id" element={<MovieDetail />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/blog/create" element={<CreateBlog />} />
+        </Routes>
       </div>
-      
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
