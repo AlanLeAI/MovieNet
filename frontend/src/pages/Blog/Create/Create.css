@@ -2,8 +2,15 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.blogTitle {
+.blogDetail {
+  width: 15%;
+  margin-left: 12px;
 }
 
-.blogContent {
+.blogDetailButton:hover {
+  background-color: rgb(48, 48, 48);
+}
+
+.userBlog {
+  width: 80%;
 }

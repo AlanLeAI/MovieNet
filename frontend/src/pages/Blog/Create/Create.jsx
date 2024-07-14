@@ -5,12 +5,13 @@ import { auth } from "../../../firebase";
 const CreateBlog = () => {
   const [title, setTitle] = React.useState("");
   const [content, setContent] = React.useState("");
-  const [user, setUser] = React.useState();
+  const [user, setUser] = React.useState({ displayName: "", id: "" });
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         setUser(user);
+        console.log(user);
       } else {
         setUser(null);
       }
@@ -33,49 +34,70 @@ const CreateBlog = () => {
   };
 
   return (
-    <div>
-      {/* Button */}
-      <div className="d-flex flex-row-reverse mt-3 mb-3">
-        <button
-          className="border me-5 p-1 text-white rounded bgTransparent"
-          type="button"
-          onClick={publishBlog}
-        >
-          Publish
-        </button>
+    <div className="d-flex flex-row mt-4 justify-content-between">
+      <div className="border rounded p-4 d-flex flex-column userBlog m-3">
+        <p>Blog Title</p>
+        {/*Input title  */}
+        <input
+          onChange={(event) => {
+            setTitle(event.target.value);
+            console.log(title);
+          }}
+          type="text"
+          placeholder="title"
+          value={title}
+          className="border p-2 rounded bgTransparent text-white"
+        ></input>
 
-        <button
-          className="border me-2 p-1 text-white rounded bgTransparent"
-          type="button"
-        >
-          Preview
-        </button>
+        {/* Input Content */}
+        <textarea
+          onChange={(event) => {
+            setContent(event.target.value);
+          }}
+          name="blogContent"
+          className="border p-2 rounded text-white mt-3 bgTransparent"
+          placeholder="What's on your mind?"
+          rows={15}
+        ></textarea>
       </div>
 
-      {/*Input title  */}
+      {/* Blog Details */}
+      <div className="border rounded p-3 m-3 blogDetail overflow-hidden">
+        <div className="d-flex justify-content-center">
+          <h5>Blog Details</h5>
+        </div>
 
-      <input
-        onChange={(event) => {
-          setTitle(event.target.value);
-          console.log(title);
-        }}
-        type="text"
-        placeholder="title"
-        value={title}
-        className="h3 border  p-2 rounded ms-3 bgTransparent"
-      ></input>
+        {/* Author */}
+        <div className="d-flex flex-row align-items-center">
+          <div>Author:</div>
+          <img
+            src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
+            alt="avatar"
+            width={30}
+            height={30}
+            className="rounded-circle border m-3 d-flex align-self-center"
+          ></img>
+          <div>{user.displayName}</div>
+        </div>
 
-      {/* Input Content */}
-      <textarea
-        onChange={(event) => {
-          setContent(event.target.value);
-        }}
-        name="blogContent"
-        cols="85"
-        rows="10"
-        className="h3 border p-2 pt-3 rounded ms-3 mt-3 bgTransparent"
-        placeholder="What's on your mind?"
-      ></textarea>
+        {/* Button */}
+        <div className="d-flex justify-content-around">
+          <button
+            className="border p-1 text-white rounded bgTransparent blogDetailButton"
+            type="button"
+          >
+            Preview
+          </button>
+
+          <button
+            className="border p-1 text-white rounded bgTransparent blogDetailButton"
+            type="button"
+            onClick={publishBlog}
+          >
+            Publish
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
