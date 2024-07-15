@@ -15,9 +15,9 @@ function Home() {
         <div className="hero-caption">
           <img src={hero_title} alt="" className="caption-img" />
           <p>
-            Discovering his ties to a secret ancient order, a young man living
-            in modern Istanbul embarks on a quest save the city from an immortal
-            enemy.
+            Three irreverent rebels plan to exact revenge against a common enemy
+            on a dark, stormy night in the fall of 1987. As their relationships
+            unravel, a strange, mysterious sound draws them toward nearby woods.
           </p>
           <TitleCards />
         </div>

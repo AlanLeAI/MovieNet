@@ -13,7 +13,7 @@
     position: absolute;
     width: 100%;
     padding-left: 6%;
-    bottom: 0;
+    bottom: 10%;
 }
 
 .caption-img{
@@ -23,9 +23,14 @@
 }
 
 .hero-caption p{
-    max-width: 700px;
+    max-width: 450px;
     font-size: 17px;
     margin-bottom: 20px;
+}
+
+.hero-caption .titlecards {
+    position: relative;
+    top: 100px;
 }
 
 .hero-btns{
