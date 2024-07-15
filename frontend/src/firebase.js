@@ -58,6 +58,7 @@ async function signup(name, email, password) {
 
 async function login(email, password) {
   try {
+    console.log(email);
     await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
     console.log(error);

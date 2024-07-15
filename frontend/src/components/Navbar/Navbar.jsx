@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <nav className="custom-navbar">
-      <div className="mx-5 d-flex justify-content-between align-items-center">
+      <div className="mx-5 py-1 d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
           <img
             className="text-logo"
@@ -77,7 +77,7 @@ function Navbar() {
               <img
                 src={caret_icon}
                 alt="Caret Icon"
-                className="dropdown-toggle"
+                className="dropdown-toggle py-3"
                 id="dropdownMenuButton"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
