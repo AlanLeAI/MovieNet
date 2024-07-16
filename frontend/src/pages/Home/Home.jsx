@@ -25,7 +25,7 @@ function Home() {
         <TitleCards title={"Blockbuster Movies"} category={"top_rated"} />
         <TitleCards title={"Only on MovieNet"} category={"popular"} />
         <TitleCards title={"Upcoming"} category={"upcoming"} />
-        <TitleCards title={"Top pics for you"} category={"now_playing"} />
+        <TitleCards title={"Top picks for you"} category={"now_playing"} />
       </div>
 
       <Footer />
