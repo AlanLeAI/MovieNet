@@ -1,148 +1,148 @@
 .custom-navbar {
-    width: 100%;  
-    font-size: 14px;
-    background-image: linear-gradient(180deg, rgba(84, 82, 82, 0.7) 10%, transparent);
-    z-index: 1;
+  width: 100%;  
+  font-size: 14px;
+  background-image: linear-gradient(180deg, rgba(77, 78, 78, 0.7));
+  z-index: 1;
 }
 
 .nav-items {
-     text-decoration: none;
-     padding: 0.2rem 0.75rem;
-     font-size: 16px;
-     font-weight: 600;
-     color: #fefefe;
-     position: relative;
-     transition: color 0.25s;
+   text-decoration: none;
+   padding: 0.2rem 0.75rem;
+   font-size: 16px;
+   font-weight: 600;
+   color: #fefefe;
+   position: relative;
+   transition: color 0.25s;
 }
 
 .nav-items:hover {
-    background-color: #fefefe;
-    color: black;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 0.2rem 0.75rem;
+  background-color: #fefefe;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.2rem 0.75rem;
 }
 
 .text-logo {
-    width: 125px;
+  width: 125px;
 }
 
 .text-logo:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .search-box{
-  width: fit-content;
-  height: fit-content;
-  position: relative;
+width: fit-content;
+height: fit-content;
+position: relative;
 }
 .input-search{
-  height: 50px;
-  width: 50px;
-  border-style: none;
-  padding: 10px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  outline: none;
-  border-radius: 25px;
-  transition: all .5s ease-in-out;
-  background-color: #585959da;
-  padding-right: 40px;
-  color:#fff;
+height: 50px;
+width: 50px;
+border-style: none;
+padding: 10px;
+font-size: 18px;
+letter-spacing: 2px;
+outline: none;
+border-radius: 25px;
+transition: all .5s ease-in-out;
+background-color: #585959da;
+padding-right: 40px;
+color:#fff;
 }
 .input-search::placeholder{
-  color:rgba(255,255,255,.5);
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: 100;
+color:rgba(255,255,255,.5);
+font-size: 18px;
+letter-spacing: 2px;
+font-weight: 100;
 }
 .btn-search{
-  width: 50px;
-  height: 50px;
-  border-style: none;
-  font-size: 20px;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  right: 0px;
-  color:#ffffff ;
-  background-color:transparent;
-  pointer-events: painted;  
+width: 50px;
+height: 50px;
+border-style: none;
+font-size: 20px;
+font-weight: bold;
+outline: none;
+cursor: pointer;
+border-radius: 50%;
+position: absolute;
+right: 0px;
+color:#ffffff ;
+background-color:transparent;
+pointer-events: painted;  
 }
 .btn-search:focus ~ .input-search{
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+width: 300px;
+border-radius: 0px;
+background-color: transparent;
+border-bottom:1px solid rgba(255,255,255,.5);
+transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 .input-search:focus{
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+width: 300px;
+border-radius: 0px;
+background-color: transparent;
+border-bottom:1px solid rgba(255,255,255,.5);
+transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
 .avatar {
-    width: 25px;
+  width: 25px;
 }
 
 /* DROPDOWN */
 .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-  
-  .dropdown-menu p {
-    margin: 0;
-    cursor: pointer;
-  }
-  
-  .dropdown-menu p:hover {
-    background-color: #f8f9fa;
-  }
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dropdown-menu p {
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown-menu p:hover {
+  background-color: #f8f9fa;
+}
 
 /* 
 
 .navbar-right .icons{
-    width: 20px;
-    cursor: pointer;
+  width: 20px;
+  cursor: pointer;
 }
 
 .navbar-right .profile{
-    border-radius: 4px;
-    width: 35px;
+  border-radius: 4px;
+  width: 35px;
 }
 
 
 .custom-navbar .custom-dropdown{
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: max-content;
-    background: #191919;
-    padding: 18px 22px;
-    border-radius: 2px;
-    text-decoration: underline;
-    z-index: 1;
-    display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  background: #191919;
+  padding: 18px 22px;
+  border-radius: 2px;
+  text-decoration: underline;
+  z-index: 1;
+  display: none;
 }
 
 .navbar .custom-dropdown p{
-    font-size: 13px;
-    cursor: pointer;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 .navbar-profile:hover .custom-dropdown{
-    display: block;
+  display: block;
 }
 
 .nav-dark{
-    background-color: #141414;
+  background-color: #141414;
 }
 
 @media (max-width: 800px){
