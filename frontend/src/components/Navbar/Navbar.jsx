@@ -48,7 +48,7 @@ function Navbar() {
           <li>Browse by Languages</li>
           <li
             onClick={() => {
-              navigate("/blog/6");
+              navigate("/blog/9");
             }}
           >
             Blog
