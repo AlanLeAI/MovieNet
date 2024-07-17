@@ -9,16 +9,32 @@ import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
-
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import blogContentTheme from "./blogContentTheme";
 import ToolbarPlugin from "./plugins/ToolBarPlugin";
 import TreeViewPlugin from "./plugins/TreeViewPlugin";
+
+function MyOnChangePlugin({ onChange }) {
+  const [editor] = useLexicalComposerContext();
+  useEffect(() => {
+    return editor.registerUpdateListener(({ editorState }) => {
+      onChange(editorState);
+    });
+  }, [editor, onChange]);
+  return null;
+}
 
 const CreateBlog = () => {
   const [title, setTitle] = React.useState("");
   const [content, setContent] = React.useState("");
   const [user, setUser] = React.useState({ displayName: "", id: "" });
+  const [editorState, setEditorState] = React.useState();
   const placeholder = "Enter some rich text...";
+
+  function onChangeEditor(editorState) {
+    const editorStateJSON = editorState.toJSON();
+    setEditorState(JSON.stringify(editorStateJSON));
+  }
 
   const editorConfig = {
     namespace: "React.js Demo",
@@ -44,7 +60,7 @@ const CreateBlog = () => {
   const publishBlog = async () => {
     const url = `http://localhost:3000/blogs`;
 
-    const req = { title: title, content: content, authorID: user.uid };
+    const req = { title: title, content: editorState, authorID: [user.uid] };
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -101,6 +117,7 @@ const CreateBlog = () => {
               <HistoryPlugin />
               <AutoFocusPlugin />
               {/* <TreeViewPlugin /> */}
+              <MyOnChangePlugin onChange={onChangeEditor} />
             </div>
           </div>
         </LexicalComposer>

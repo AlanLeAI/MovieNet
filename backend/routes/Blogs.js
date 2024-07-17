@@ -38,11 +38,11 @@ const blogRouter = (db) => {
   // Update a blog
   router.put("/:id", async (req, res) => {
     const { id } = req.params;
-    const { title, content, authorID } = req.body;
+    const { title, content, authorID, status, categories } = req.body;
     try {
       const result = await db.query(
-        `UPDATE blogs SET title=$1, content=$2, authorID=$3 WHERE id=$4 RETURNING *`,
-        [title, content, authorID, id]
+        `UPDATE blogs SET title=$1, content=$2, authorID=$3, status=$4, categories=$5 WHERE id=$6 RETURNING *`,
+        [title, content, authorID, status, categories, id]
       );
 
       if (result.rows.length === 0) {
