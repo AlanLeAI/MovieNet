@@ -16,11 +16,17 @@
 }
 
 .nav-items:hover {
-  background-color: #fefefe;
+  background-color: #dcdada;
   color: black;
   border-radius: 10px;
   cursor: pointer;
   padding: 0.2rem 0.75rem;
+}
+
+.nav-items.active {
+  color: black;
+  background-color: #dcdada;
+  border-radius: 10px;
 }
 
 .icons {
