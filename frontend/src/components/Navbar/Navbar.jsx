@@ -60,7 +60,6 @@ function Navbar() {
               placeholder="Type to Search..."
             />
           </div>
-          <p className="mt-3">Adult</p>
           <img src={bell_icon} alt="notification" className="icons mx-3" />
 
           <div className="d-flex align-items-center">
