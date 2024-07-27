@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/MovieNet_Text.png'
 import {login, signup} from '../../firebase'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { auth, db } from '../../firebase'
