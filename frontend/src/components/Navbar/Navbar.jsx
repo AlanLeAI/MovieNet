@@ -4,11 +4,15 @@ import logo from "../../assets/MovieNet_Text.png";
 import bell_icon from "../../assets/bell_icon.svg";
 import profile_img from "../../../public/imgs/profile_img_default.png";
 import caret_icon from "../../assets/caret_icon.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { logout } from "../../firebase";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isActive = (path) => {
+    return location.pathname === path ? "active" : "";
+  };
 
   const [query, setQuery] = React.useState("");
 
@@ -38,30 +42,34 @@ function Navbar() {
             className="d-flex align-items-center mt-2"
             style={{ listStyle: "none" }}
           >
-            <li className="nav-items" onClick={() => navigate("/home")}>
+            <li
+              className={`nav-items ${isActive("/home")}`}
+              onClick={() => navigate("/home")}
+            >
               Home
             </li>
-            <li className="nav-items">Trending</li>
-            <li className="nav-items">Top Rated</li>
-            <li className="nav-items">TV Shows</li>
-            <li className="nav-items">Movies</li>
-            <li className="nav-items">New & Popular</li>
+            <li className={`nav-items ${isActive("/trending")}`}>Trending</li>
+            <li className={`nav-items ${isActive("/top-rated")}`}>Top Rated</li>
+            <li className={`nav-items ${isActive("/tv-shows")}`}>TV Shows</li>
+            <li className={`nav-items ${isActive("/movies")}`}>Movies</li>
+            <li className={`nav-items ${isActive("/new-popular")}`}>
+              New & Popular
+            </li>
           </ul>
         </div>
         <div className="navbar-profile d-flex justify-content-between align-items-center">
-          <div class="search-box mx-2">
-            <button class="btn-search">
-              <i class="fas fa-search"></i>
+          <div className="search-box mx-2">
+            <button className="btn-search">
+              <i className="fas fa-search"></i>
             </button>
             <input
               type="text"
               onChange={queryMovie}
-              class="input-search"
+              className="input-search"
               placeholder="Type to Search..."
             />
           </div>
-          <p className="mt-3">Adult</p>
-          <img src={bell_icon} alt="notification" className="icons mx-3" />
+          <img src={bell_icon} alt="notification" className="icons" />
 
           <div className="d-flex align-items-center">
             <div className="dropdown">
