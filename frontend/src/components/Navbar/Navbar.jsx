@@ -69,7 +69,7 @@ function Navbar() {
               placeholder="Type to Search..."
             />
           </div>
-          <img src={bell_icon} alt="notification" className="icons mx-3" />
+          <img src={bell_icon} alt="notification" className="icons" />
 
           <div className="d-flex align-items-center">
             <div className="dropdown">
