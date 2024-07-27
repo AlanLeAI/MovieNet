@@ -46,7 +46,9 @@ function Login() {
 
   return (
     <>
-      <img src={logo} className="brand" />
+      <div className="d-flex justify-content-center">
+        <img src={logo} className="brand" />
+      </div>
       <section className="login">
         <div className="form-box">
           <form>

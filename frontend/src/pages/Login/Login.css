@@ -2,24 +2,21 @@
 
 .brand {
     width: 200px;
-    position: relative;
-    left: 43%;
-    top: 100px;
+    margin-top: 48px; 
 }
 
 .login {
     width: 100%;
-    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://m.media-amazon.com/images/M/MV5BZWIwYTExMzgtZmIxYy00MTAyLTk0ZTgtNmFhMmJjZTM3MzQyXkEyXkFqcGdeQXVyNjA5NDgxNTg@._V1_.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
     background-position: center;
     background-size: cover;
+    margin-top: 0;
 }
 
 .form-box {
-    position: relative;
     width: 400px;
     height: 550px;
     background: transparent;
