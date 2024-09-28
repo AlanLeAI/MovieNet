@@ -1,6 +1,19 @@
 # MovieNet
 
 > A next-generation movie streaming platform offering a feature-rich viewing experience, equipped with real-time interactive capabilities for movie enthusiasts and cinephiles.
+>
+<table>
+  <tr>
+    <td>
+      <img width="1469" alt="image" src="https://github.com/user-attachments/assets/b4aabed8-b238-484c-85d3-a1a3be6031ed">
+    </td>
+    <td>
+      <img width="1411" alt="image" src="https://github.com/user-attachments/assets/cf971c99-df9f-4354-aa43-93f4389511d6">
+    </td>
+  </tr>
+</table>
+
+
 
 ## 💾 Technologies
 
@@ -8,7 +21,7 @@
 - **Backend**: Node.js, Express.js
 - **Real-Time Communication**: Socket.io
 - **Authentication**: Firebase API
-- **Database**: PostgreSQL
+- **Database**: PostgreSQL, Firebase Storage
 
 ## 🌟 Features
 
