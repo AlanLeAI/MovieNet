@@ -29,10 +29,10 @@ function App() {
   return (
     <div className="app-container">
       <ToastContainer theme="black" />
-      {location.pathname !== "/" && <Navbar />}
+      {location.pathname !== "" && <Navbar />}
       <div className="content-container">
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/moviedetail/:id" element={<MovieDetail />} />
           <Route path="/search" element={<SearchPage />} />
