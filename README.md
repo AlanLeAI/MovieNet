@@ -1,7 +1,7 @@
 # MovieNet
 
 > A next-generation movie streaming platform offering a feature-rich viewing experience, equipped with real-time interactive capabilities for movie enthusiasts and cinephiles.
->
+
 <table>
   <tr>
     <td>
@@ -12,8 +12,6 @@
     </td>
   </tr>
 </table>
-
-
 
 ## 💾 Technologies
 
@@ -26,8 +24,6 @@
 ## 🌟 Features
 
 - **Real-Time Commenting**: Dive into movies with a community-driven commenting system that updates in real-time. Share thoughts and insights on scenes as they unfold, enhancing the communal viewing experience.
-
-- **Interactive Chat Rooms**: Join chat rooms that connect you with other viewers. Discuss movies, share recommendations, and build a community of movie lovers.
 
 - **Secure User Authentication**: Sign in seamlessly using Google or traditional email/password methods. Our integration with Firebase ensures your data is secure and access is smooth.
 
