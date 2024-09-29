@@ -27,7 +27,7 @@
 - **Extensive Movie Library**: Explore an extensive database of movies. Stream your old favorites and discover new ones with ease.
 
 - **Real-Time Commenting**: Dive into movies with a community-driven commenting system that updates in real-time. Share thoughts and insights on scenes as they unfold, enhancing the communal viewing experience.
-  <img width="1411" alt="image" src="https://socket.io/images/tutorial/disconnected.png](https://www.google.com/url?sa=i&url=https%3A%2F%2Ftremitch504.medium.com%2Fpolling-vs-websockets-vs-socket-io-45a9e9673af6&psig=AOvVaw3yOc6Wrt27zNXIDOtp33MM&ust=1727661031643000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwjf7veBheeIAxXWtIkEHe53PVUQjRx6BAgAEBg">
+  <img width="1411" alt="image" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftremitch504.medium.com%2Fpolling-vs-websockets-vs-socket-io-45a9e9673af6&psig=AOvVaw3yOc6Wrt27zNXIDOtp33MM&ust=1727661031643000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwjf7veBheeIAxXWtIkEHe53PVUQjRx6BAgAEBg">
 
 - **Personalized Recommendations**: Enjoy movie suggestions tailored to your viewing habits. Our system learns your preferences to improve your discovery process.
 
