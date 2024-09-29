@@ -20,7 +20,7 @@
 - **Real-Time Communication**: Socket.io
 - **Authentication**: Firebase API
 - **Database**: PostgreSQL, Firebase Storage
-- **Movies API**: TMDB
+- **Movies API**: The Movie Database (TMDB)
 
 ## 🌟 Features
 
