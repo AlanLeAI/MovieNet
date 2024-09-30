@@ -10,7 +10,7 @@
   </tr>
 </table>
 
-<img width="1260" alt="image" src="https://github.com/user-attachments/assets/fbac42dd-1398-4259-86e7-ffa18d298baf">
+
 
 
 ## 💾 Technologies
@@ -28,6 +28,7 @@
   <img width="1411" alt="image" src="https://github.com/user-attachments/assets/cf971c99-df9f-4354-aa43-93f4389511d6">
 
 - **Extensive Movie Library**: Explore an extensive database of movies. Stream your old favorites and discover new ones with ease.
+  <img width="1260" alt="image" src="https://github.com/user-attachments/assets/fbac42dd-1398-4259-86e7-ffa18d298baf">
 
 - **Real-Time Commenting**: Dive into movies with a community-driven commenting system that updates in real-time. Share thoughts and insights on scenes as they unfold, enhancing the communal viewing experience.
   <img width="1411" alt="image" src="https://miro.medium.com/v2/resize:fit:853/1*8-fT6K1o6nHiBRxKppcqOg.png">
