@@ -10,7 +10,10 @@
   </tr>
 </table>
 
-
+## 👨‍💻 Contributors:
+-  Tuan (Alan) Le tuanlattnlhp@gmail.com
+-  Nhat (Chris) Le anhat.ptnk2023@gmail.com
+-  Duy Kha Tran duykha121314888@gmail.com
 
 
 ## 💾 Technologies
