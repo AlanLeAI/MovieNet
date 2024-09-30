@@ -10,6 +10,9 @@
   </tr>
 </table>
 
+<img width="1260" alt="image" src="https://github.com/user-attachments/assets/fbac42dd-1398-4259-86e7-ffa18d298baf">
+
+
 ## 💾 Technologies
 
 - **Frontend**: React.js, Bootstrap CSS
