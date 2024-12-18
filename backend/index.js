@@ -4,6 +4,7 @@ import pg from "pg";
 import cors from "cors";
 import fetch from "node-fetch";
 import env from "dotenv";
+import blogRouter from "./routes/Blogs.js";
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,8 @@ db.connect();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use("/blogs", blogRouter(db));
 
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
